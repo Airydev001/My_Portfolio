@@ -91,7 +91,7 @@ console.log(background);
 
 function darker(){
     
-    smallWidth.classList.toggle("dark-mode");
+    smallWidth.classList.toggle("bit-dark");
     background.classList.toggle("darker");
     darkMode.classList.toggle("dark-mode");
     

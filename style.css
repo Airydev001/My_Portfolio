@@ -197,8 +197,7 @@ nav [class*="fa-"] {
 
 img {
     width: 100%;
-    min-width: 400px;
-    max-width: 600px;
+
 }
 
 #project img {
@@ -306,6 +305,10 @@ footer p {
     color: white;
 }
 
+.bit-dark {
+    background-color: rgb(24, 25, 26, 0.4);
+}
+
 /***Responsive Design***/
 
 @media (max-width:600px) {
@@ -333,6 +336,16 @@ footer p {
 
     #menu-bar {
         display: block;
+    }
+
+    .black-box {
+        min-width: 250px;
+        max-width: 400px;
+    }
+
+    img {
+        min-width: 250px;
+        max-width: 400px;
     }
 
     #close-btn {
@@ -368,6 +381,7 @@ footer p {
         gap: 1rem;
 
     }
+
 
 
     nav ul {
