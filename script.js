@@ -30,7 +30,7 @@ for (let i=0; i < storeSplit.length; i++){
     }
     
 } */
-
+/*
 const cards = document.querySelectorAll('.card');
 
 const callback = (elements) => {
@@ -60,19 +60,38 @@ const callbacks = (elements) => {
 }
 const observers = new IntersectionObserver(callbacks);//Since it is a function can be called anyw...
 cards2.forEach(card => observers.observe(card));
+*/
+//For the modal close;
+
+const clicker = document.querySelector(".clicker");
+const smallWidth= document.querySelector(".small-width-screen");
+const closeModal = document.querySelector(".close-btn");
+if (window.innerWidth <= 600){
+    function openMenu(){
+        smallWidth.style.display="block";
+        smallWidth.style.width="200px";
+    }
+}
+clicker.addEventListener('click',openMenu)
+closeModal.addEventListener("click", function(){
+smallWidth.style.display="none";
+})
+
+
 
 /*****FOR DARKER MODE DISPLAY */
 const darkMode = document.querySelector(".fa ");
 const background = document.querySelector(".light");
 
-console.log(background);
 
+
+console.log(background);
 
 
 
 function darker(){
     
-    
+    smallWidth.classList.toggle("dark-mode");
     background.classList.toggle("darker");
     darkMode.classList.toggle("dark-mode");
     
