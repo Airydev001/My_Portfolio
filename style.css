@@ -16,22 +16,34 @@
 /* border box model: https://css-tricks.com/box-sizing/ */
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
+
+
 
 /* generic styles for the page */
 .light {
-    padding: 0;
-    margin: 0;
     font-family: var(--sanss);
     background-color: #010221;
     color: var(--white);
     font-size: var(--font-size);
+    margin: 0;
+
+
+}
+
+.chimp {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 h1,
@@ -52,8 +64,7 @@ a:hover {
 /* intro styles */
 #intro {
     padding: 4rem 1rem 10rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+
 }
 
 #intro p {
@@ -85,8 +96,8 @@ a:hover {
 .contact-me {
     margin: 0 auto;
     text-align: center;
-    flex-basis: 40%;
-    min-width: 200px;
+    width: 100%;
+    max-width: 400px;
     font-size: 1rem;
     padding: 3rem 0;
 
@@ -148,9 +159,9 @@ nav [class*="fa-"] {
 
 #project {
     padding: 4rem 1rem;
-    margin: 0 auto;
-    min-width: 400px;
-    max-width: 1200px;
+    max-width: 1200%;
+    width: 100%;
+
 }
 
 #project h2 {
@@ -260,7 +271,7 @@ nav a:hover {
 }
 
 footer {
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
     text-align: center;
     padding: 4rem 0;
@@ -299,6 +310,11 @@ footer p {
 
 .darker {
     background-color: rgb(24, 25, 26);
+    color: white;
+}
+
+.darker h3 {
+    color: white;
 }
 
 .dark-mode {
@@ -312,16 +328,22 @@ footer p {
 /***Responsive Design***/
 
 @media (max-width:600px) {
+    .name span {
+        font-size: 2rem;
+    }
 
+    #project h2 {
+        font-size: 2rem;
+    }
 
-    nav .small-width-screen {
+    .small-width-screen {
 
         margin: 0;
         padding: 0;
 
         display: none;
 
-        flex-direction: column;
+
         overflow: none;
         height: 100vh;
 
@@ -334,22 +356,26 @@ footer p {
 
     }
 
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
     #menu-bar {
         display: block;
     }
 
     .black-box {
-        min-width: 250px;
-        max-width: 400px;
+        flex-basis: 25%;
     }
 
     img {
-        min-width: 250px;
-        max-width: 400px;
+        flex-basis: 25%;
     }
 
     #close-btn {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .clicker {
@@ -357,7 +383,7 @@ footer p {
     }
 
 
-    nav ul li {
+    li {
         text-align: center;
         padding: 1rem 0;
     }
@@ -371,6 +397,10 @@ footer p {
     .close-btn {
         font-size: 1.5rem;
         margin-top: 1rem;
+    }
+
+    footer ul {
+        gap: 1rem;
     }
 }
 
@@ -386,6 +416,8 @@ footer p {
 
     nav ul {
         display: flex;
+        flex-direction: row;
+        gap: 1em;
     }
 
     .reverse {
@@ -413,7 +445,7 @@ footer p {
     }
 
     #project img {
-        grid-column: 1/3;
+        grid-column: 1/5;
         grid-row: 1/2;
     }
 

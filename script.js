@@ -66,12 +66,12 @@ cards2.forEach(card => observers.observe(card));
 const clicker = document.querySelector(".clicker");
 const smallWidth= document.querySelector(".small-width-screen");
 const closeModal = document.querySelector(".close-btn");
-if (window.innerWidth <= 600){
+
     function openMenu(){
         smallWidth.style.display="block";
         smallWidth.style.width="200px";
     }
-}
+
 clicker.addEventListener('click',openMenu)
 closeModal.addEventListener("click", function(){
 smallWidth.style.display="none";
@@ -82,6 +82,7 @@ smallWidth.style.display="none";
 /*****FOR DARKER MODE DISPLAY */
 const darkMode = document.querySelector(".fa ");
 const background = document.querySelector(".light");
+const about = document.querySelector(".section-backg");
 
 
 
@@ -90,10 +91,20 @@ console.log(background);
 
 
 function darker(){
-    
+   const h3 = document.querySelector("h3");
+   const blackBox = document.querySelector(".black-box");
     smallWidth.classList.toggle("bit-dark");
     background.classList.toggle("darker");
     darkMode.classList.toggle("dark-mode");
+    about.classList.toggle("darker");
+    //console.log(about.classList.contains("darker"));
+    if(about.classList.contains("darker")){
+     h3.style.color="white";
+     blackBox.style.backgroundColor="#0A7373";
+    } else{
+        h3.style.color="";
+        blackBox.style.backgroundColor="";
+    }
     
 }
 
